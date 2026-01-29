@@ -1,0 +1,51 @@
+@layer utils, component, page;
+
+@import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" layer(utils);
+@import "https://unpkg.com/open-props" layer(utils);
+@import "./styles/intro.css" layer(page);
+
+:root {
+  --top: light-dark(var(--stone-9), var(--stone-5));
+  --bottom: light-dark(var(--stone-2), var(--stone-10));
+  --font-custom: "Poppins", sans-serif;
+
+  --accent: light-dark(var(--cyan-7), var(--cyan-3))
+}
+
+:where(html) {
+  margin: 0;
+  padding: 0;
+  /* color-scheme: light dark; */
+
+  font-family: var(--font-custom);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  background-color: light-dark(var(--stone-2), var(--stone-10));
+  color: light-dark(var(--stone-9), var(--stone-5));
+}
+
+@layer utils {
+  :where(html) {
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+    h1 {
+      font-size: clamp(2rem, 12vw, 8rem);
+    }
+    h2 {
+      font-size: clamp(1.2rem, 6vw, 3rem);
+    }
+    p {
+      max-width: 40rem;
+      /* font-size: clamp(1rem, 2vw, 1.3rem); */
+    }
+  }
+}
+
+@layer component {
+  :where(main > section) {
+    padding: clamp(1rem, 5vw, 5rem);
+  }
+}
