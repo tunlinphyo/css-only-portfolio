@@ -27,22 +27,51 @@
       </style>
     </svg>
     <main>
-      <header>
+      <div class="rotater">
+        <div class="circle-wrapper">
+          <svg viewBox="0 0 200 200" class="circle-text">
+            <defs>
+              <path
+                id="circlePath"
+                d="M 100, 100
+                  m -70, 0
+                  a 70,70 0 1,1 140,0
+                  a 70,70 0 1,1 -140,0" />
+            </defs>
 
-      </header>
+            <text>
+              <textPath href="#circlePath" startOffset="50%" text-anchor="middle">
+                # TUN LIN PHYO
+              </textPath>
+            </text>
+          </svg>
+        </div>
+      </div>
 
       <section class="intro">
+        <div class="bg-text">トゥン　リン　ピョー</div>
         <div class="name">
-          <h1>Tun Lin Phyo</h1>
+          <h1>
+            I'm <em>Tun</em>,<br/>
+            a <em class="reversed">Frontend Engineer</em><br />
+            based in <em>Tokyo</em>
+          </h1>
         </div>
-        <h2>Senior Frontend Engineer</h2>
+        <!-- <h2>Accessibility Specialist</h2> -->
         <!-- Senior Frontend Engineer -->
-        <p class="good-at">(TypeScript, Vue, Web Components, Firebase)</p>
+        <!-- <p class="good-at">(TypeScript, Vue, Web Components, Firebase)</p> -->
         <p class="what-i-do">
           I build production web applications with a focus on UI architecture, performance, and reliable delivery.
-          I've worked in Tokyo since 2021, leading frontend work for e-commerce and high-traffic systems.
+          <!-- I've worked in Tokyo since 2021, leading frontend work for e-commerce and high-traffic systems. -->
         </p>
-        <div class="quick-contacts">
+
+        <div class="side-bar">
+          <div class="tategaki">フロントエンドエンジニア</div>
+        </div>
+      </section>
+
+      <section class="quick-contact">
+        <div class="contacts">
           <div class="container">
             <div class="heilight"></div>
             <ul class="buttons-group">
@@ -134,6 +163,10 @@
           </div>
         </div>
       </section>
+
+      <section class="about-me"></section>
+
+      <section class="work-history"></section>
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>

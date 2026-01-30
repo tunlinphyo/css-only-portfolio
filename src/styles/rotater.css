@@ -1,0 +1,66 @@
+
+.rotater {
+  --size: 1.25em;
+  --padding: 0.25em;
+  --width: clamp(80px, 10vw, 120px);
+  --half-width: calc(var(--width) * 2);
+  --top: light-dark(var(--stone-0), var(--stone-10));
+  --bottom: light-dark(var(--stone-4), var(--stone-12));
+
+  position: fixed;
+  z-index: 5;
+  right: calc(clamp(1rem, 5vw, 10rem) * 0.75);
+  bottom: calc(clamp(1rem, 5vw, 10rem) * 0.75);
+
+  width: var(--width);
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: var(--padding);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+
+  box-shadow: var(--shadow-2), inset 0 2px 2px light-dark(white, var(--stone-9));
+  background-image: linear-gradient(var(--top), var(--bottom));
+  -webkit-mask:
+    radial-gradient(circle at center, transparent 33%, black 0);
+  mask:
+    radial-gradient(circle at center, transparent 33%, black 0);
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    inset: 25%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow: inset 0 -2px 2px light-dark(var(--stone-2), var(--stone-10));
+    /* background-color: hotpink; */
+  }
+
+  /* box-shadow: inset 0 0 0 var(--size) var(--surface-1), inset 0 2px 4px calc(var(--size) - 0.1em) light-dark(var(--stone-4), var(--stone-12)), var(--shadow-1); */
+
+  .circle-wrapper {
+    animation: rotateAnimation 1ms linear;
+    animation-timeline: --square-timeline;
+
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .circle-text {
+    width: 100%;
+    height: 100%;
+  }
+
+  .circle-text text {
+    font-size: 36px;
+    font-family: var(--font-custom);
+    letter-spacing: 10px;
+    fill: var(--muted-text);
+  }
+}

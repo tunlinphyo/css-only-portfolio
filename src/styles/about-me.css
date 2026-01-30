@@ -1,0 +1,5 @@
+.about-me {
+  margin-block-start: 6vh;
+  height: 100vh;
+  background-color: light-dark(var(--stone-3), var(--stone-12));
+}

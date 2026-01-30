@@ -2,14 +2,24 @@
 
 @import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" layer(utils);
 @import "https://unpkg.com/open-props" layer(utils);
+
+@import "./styles/rotater.css" layer(page);
 @import "./styles/intro.css" layer(page);
+@import "./styles/quick-contact.css" layer(page);
+@import "./styles/about-me.css" layer(page);
+@import "./styles/work-history.css" layer(page);
 
 :root {
   --top: light-dark(var(--stone-2), var(--stone-5));
-  --bottom: light-dark(var(--stone-6), var(--stone-10));
+  --bottom: light-dark(var(--stone-6), var(--stone-11));
   --font-custom: "Poppins", sans-serif;
 
-  --accent: light-dark(var(--cyan-7), var(--cyan-3))
+  --surface-1: light-dark(var(--stone-2), var(--stone-11));
+  --surface-2: light-dark(var(--stone-1), var(--stone-9));
+  --base-text: light-dark(var(--stone-9), var(--stone-5));
+  --muted-text: light-dark(var(--stone-7), var(--stone-7));
+  --accent: light-dark(var(--cyan-6), var(--cyan-8));
+  --popover-origin: bottom;
 }
 
 :where(html) {
@@ -21,19 +31,22 @@
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  background-color: light-dark(var(--stone-2), var(--stone-10));
-  color: light-dark(var(--stone-9), var(--stone-5));
+  background-color: var(--surface-1);
+  color: var(--base-text);
 }
 
 @layer utils {
   :where(html) {
+    scroll-timeline: --square-timeline y;
+    /* Firefox supports the non-standard vertical/horizontal syntax */
+    scroll-timeline: --square-timeline vertical;
     * {
       margin: 0;
       box-sizing: border-box;
     }
-    h1 {
-      font-size: clamp(2rem, 12vw, 8rem);
-    }
+    /* h1 {
+      font-size: clamp(2rem, 8vw, 10rem);
+    } */
     h2 {
       font-size: clamp(1.2rem, 6vw, 3rem);
     }
@@ -46,7 +59,7 @@
 
 @layer component {
   :where(main > section) {
-    padding: clamp(1rem, 5vw, 5rem);
+    padding: clamp(1rem, 2vw, 4rem) clamp(1rem, 5vw, 10rem);
   }
 
   .not-in-view {
@@ -55,5 +68,74 @@
     height: 0;
     top: -99999px;
     left: -99999px;
+  }
+
+  [popover] {
+    --duration: .6s;
+    --top: light-dark(var(--stone-0), var(--stone-9));
+    --bottom: light-dark(var(--stone-4), var(--stone-11));
+
+    position: fixed;
+    border: none;
+    border-radius: 30px;
+    box-shadow: var(--shadow-2), inset 0 2px 2px light-dark(white, var(--stone-8));
+    background-image: linear-gradient(var(--top), var(--bottom));
+    padding: 0;
+
+    opacity: 0;
+    transform: scale(0);
+    /* transform-origin: var(--popover-origin); */
+    @supports (position-area: top span-right) {
+      position-area: top span-right;
+      position-try: --qc-flip-block, --qc-flip-inline;
+    }
+
+    @supports (corner-shape: squircle) {
+      border-radius: 60px;
+      corner-shape: squircle;
+    }
+
+    &:popover-open {
+      opacity: 1;
+      transform: scale(1);
+      transition:
+        opacity var(--duration) var(--ease-spring-3),
+        transform var(--duration) var(--ease-spring-3);
+
+      @starting-style {
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
+
+    @supports (corner-shape: squircle) {
+      --duration: 1s;
+      transition:
+        opacity var(--duration) var(--ease-spring-3),
+        transform var(--duration) var(--ease-spring-3),
+        display var(--duration) allow-discrete,
+        overlay var(--duration) allow-discrete;
+    }
+  }
+}
+
+@supports (position-area: bottom span-right) {
+  @position-try --qc-flip-block {
+    position-area: bottom span-right;
+    --popover-origin: top;
+  }
+
+  @position-try --qc-flip-inline {
+    position-area: top span-left;
+    --popover-origin: bottom;
+  }
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
   }
 }

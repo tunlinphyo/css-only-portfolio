@@ -1,0 +1,120 @@
+.quick-contact {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+  .contacts {
+    display: flex;
+    justify-content: flex-start;
+
+    .container {
+      anchor-name: --contact-heilight;
+      padding-inline: var(--size-2);
+
+      .heilight {
+        position-anchor: --contact-heilight;
+        position: absolute;
+        top: anchor(top);
+        left: anchor(left);
+        bottom: anchor(bottom);
+        right: anchor(right);
+        background-color: light-dark(var(--stone-5), var(--stone-8));
+        border: 3px double light-dark(var(--stone-2), var(--stone-11));
+
+        /* --top: light-dark(var(--stone-2), var(--stone-7));
+        --bottom: light-dark(var(--stone-7), var(--stone-7));
+        background-image: linear-gradient(var(--top), var(--bottom));
+        box-shadow: inset 0 1px 1px var(--stone-0); */
+
+        transition: all .7s var(--ease-spring-3);
+        border-radius: 12px;
+
+        @supports(corner-shape: squircle) {
+          border-radius: 120px;
+          corner-shape: squircle;
+        }
+      }
+    }
+
+    .buttons-group {
+      /* anchor-name: --popover; */
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      anchor-name: --contact-popover;
+
+      & li {
+        & button {
+          padding: 0;
+          border: none;
+          background-color: transparent;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: light-dark(var(--stone-0), var(--stone-11));
+          padding: var(--size-2) var(--size-3);
+
+          &:hover {
+            anchor-name: --contact-heilight;
+          }
+        }
+      }
+    }
+
+    .popover-content {
+      width: 80vw;
+      max-width: 400px;
+      padding: var(--size-5);
+      position-anchor: --contact-popover;
+
+      & h2 {
+        font-weight: 400;
+        color: var(--muted-text);
+      }
+
+      & p {
+        color: var(--base-text);
+      }
+
+      .link {
+        margin-block: var(--size-2);
+
+        & a {
+          display: inline-block;
+          text-decoration: none;
+          color: var(--accent);
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            scale: 0 1;
+            opacity: 0;
+            transform-origin: left center;
+            height: 1rem;
+            border-bottom: 3px double var(--accent);
+            transition: scale .6s var(--ease-spring-3), opacity 0s linear .6s;
+            overflow-y: clip;
+
+          }
+
+          &:hover::after {
+            scale: 1;
+            opacity: 1;
+            transition: scale .6s var(--ease-spring-3), opacity 0s linear;
+          }
+        }
+      }
+    }
+  }
+}
