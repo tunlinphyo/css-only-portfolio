@@ -5,8 +5,8 @@
 @import "./styles/intro.css" layer(page);
 
 :root {
-  --top: light-dark(var(--stone-9), var(--stone-5));
-  --bottom: light-dark(var(--stone-2), var(--stone-10));
+  --top: light-dark(var(--stone-2), var(--stone-5));
+  --bottom: light-dark(var(--stone-6), var(--stone-10));
   --font-custom: "Poppins", sans-serif;
 
   --accent: light-dark(var(--cyan-7), var(--cyan-3))
@@ -15,7 +15,7 @@
 :where(html) {
   margin: 0;
   padding: 0;
-  /* color-scheme: light dark; */
+  color-scheme: light dark;
 
   font-family: var(--font-custom);
   font-weight: 400;
@@ -47,5 +47,13 @@
 @layer component {
   :where(main > section) {
     padding: clamp(1rem, 5vw, 5rem);
+  }
+
+  .not-in-view {
+    position: fixed;
+    width: 0;
+    height: 0;
+    top: -99999px;
+    left: -99999px;
   }
 }
