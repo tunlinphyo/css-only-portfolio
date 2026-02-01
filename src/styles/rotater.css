@@ -4,8 +4,8 @@
   --padding: 0.25em;
   --width: clamp(80px, 10vw, 120px);
   --half-width: calc(var(--width) * 2);
-  --top: light-dark(var(--stone-0), var(--stone-10));
-  --bottom: light-dark(var(--stone-4), var(--stone-12));
+  --top: light-dark(var(--stone-0), var(--stone-9));
+  --bottom: light-dark(var(--stone-4), var(--stone-11));
 
   position: fixed;
   z-index: 5;
@@ -21,7 +21,7 @@
   padding: var(--padding);
   font-size: clamp(1rem, 2vw, 1.5rem);
 
-  box-shadow: var(--shadow-2), inset 0 2px 2px light-dark(white, var(--stone-9));
+  box-shadow: var(--shadow-2), inset 0 1px 1px light-dark(white, var(--stone-8));
   background-image: linear-gradient(var(--top), var(--bottom));
   -webkit-mask:
     radial-gradient(circle at center, transparent 33%, black 0);
@@ -32,10 +32,10 @@
     content: '';
     display: block;
     position: absolute;
-    inset: 25%;
+    inset: 26%;
     aspect-ratio: 1;
     border-radius: 50%;
-    box-shadow: inset 0 -2px 2px light-dark(var(--stone-2), var(--stone-10));
+    box-shadow: inset 0 -1px 1px light-dark(var(--stone-2), var(--stone-9));
     /* background-color: hotpink; */
   }
 

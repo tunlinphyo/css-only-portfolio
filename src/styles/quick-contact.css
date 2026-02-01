@@ -18,8 +18,8 @@
         left: anchor(left);
         bottom: anchor(bottom);
         right: anchor(right);
-        background-color: light-dark(var(--stone-5), var(--stone-8));
-        border: 3px double light-dark(var(--stone-2), var(--stone-11));
+        background-color: var(--muted-text);
+        border: 3px double light-dark(var(--stone-2), var(--stone-10));
 
         /* --top: light-dark(var(--stone-2), var(--stone-7));
         --bottom: light-dark(var(--stone-7), var(--stone-7));
@@ -60,9 +60,21 @@
           align-items: center;
           color: light-dark(var(--stone-0), var(--stone-11));
           padding: var(--size-2) var(--size-3);
+          
+          border-radius: 12px;
+          @supports(corner-shape: squircle) {
+            border-radius: 120px;
+            corner-shape: squircle;
+          }
 
           &:hover {
             anchor-name: --contact-heilight;
+          }
+
+          &:focus-visible {
+            anchor-name: --contact-heilight;
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
           }
         }
       }
@@ -71,10 +83,11 @@
     .popover-content {
       width: 80vw;
       max-width: 400px;
-      padding: var(--size-5);
+      padding: var(--size-3) var(--size-5) var(--size-4);
       position-anchor: --contact-popover;
 
       & h2 {
+        font-size: clamp(1.2rem, 5vw, 3rem);
         font-weight: 400;
         color: var(--muted-text);
       }
@@ -91,6 +104,18 @@
           text-decoration: none;
           color: var(--accent);
           position: relative;
+
+
+          border-radius: 12px;
+          @supports(corner-shape: squircle) {
+            border-radius: 120px;
+            corner-shape: squircle;
+          }
+
+          &:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+          }
 
           &::after {
             content: "";

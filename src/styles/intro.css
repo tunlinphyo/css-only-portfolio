@@ -12,6 +12,7 @@
     color: var(--muted-text);
     text-shadow: 0 0 4px var(--surface-1);
     padding-block: .75rem;
+    font-weight: 600;
 
     position: sticky;
     top: clamp(1rem, 2vw, 4rem);
@@ -25,6 +26,8 @@
     align-items: center;
 
     & h1 {
+      --line-width: 1px;
+      --line-color: var(--muted-text);
       font-weight: 700;
       font-size: clamp(2.8rem, 8vw, 10rem);
 
@@ -33,11 +36,15 @@
         line-height: 1;
       }
 
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: light-dark(var(--stone-5), var(--stone-7));
+      -webkit-text-stroke-width: var(--line-width);
+      -webkit-text-stroke-color: var(--line-color);
 
-      text-stroke: 1px light-dark(var(--stone-5), var(--stone-7));
+      text-stroke: var(--line-width) var(--line-color);
       color: transparent;
+
+      @media (min-width: 992px) {
+        --line-width: 2px;
+      }
 
       & em {
         /* --top: light-dark(var(--stone-0), var(--stone-9));
@@ -48,25 +55,17 @@
         -webkit-text-stroke-width: 0;
 
         transition: color .5s var(--ease-1);
-        color: light-dark(var(--stone-7), var(--stone-6));
-
-        /* background-image: linear-gradient(to bottom, var(--top), var(--bottom));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: transparent; */
+        color: var(--muted-text);
+        
         &:hover,
         &.reversed {
-          /* --top: light-dark(var(--cyan-2), var(--cyan-8));
-          --bottom: light-dark(var(--cyan-8), var(--cyan-8)); */
           color: var(--accent);
         }
       }
 
       &:has(em:not(.reversed):hover) {
         .reversed {
-          color: light-dark(var(--stone-7), var(--stone-6));
-          /* --top: light-dark(var(--stone-0), var(--stone-9));
-          --bottom: light-dark(var(--stone-10), var(--stone-11)); */
+          color: var(--muted-text);
         }
       }
     }
@@ -87,8 +86,9 @@
 
   .side-bar {
     position: absolute;
+    z-index: 0;
     right: clamp(1rem, 5vw, 10rem);
-    top: clamp(1rem, 2vw, 4rem);
+    top: clamp(1rem, 5vw, 10rem);
     /* bottom: calc(clamp(1rem, 2vw, 4rem) + 4rem); */
     display: flex;
     flex-direction: column;
@@ -105,9 +105,9 @@
     &::before, &::after {
       content: '';
       display: block;
-      width: 1px;
-      height: 22vh;
-      background-color: light-dark(var(--stone-5), var(--stone-9));
+      width: 2px;
+      height: 19vh;
+      background-color: var(--muted-text);
     }
   }
 
@@ -117,5 +117,7 @@
     white-space: nowrap;
     color: var(--muted-text);
     letter-spacing: 4px;
+    font-weight: 600;
+    line-height: 1;
   }
 }

@@ -26,6 +26,49 @@
         }
       </style>
     </svg>
+
+    <dialog id="navMenu" class="navigation-menu">
+      <form method="dialog">
+        <button id="closeNav" class="navigation-close">
+          <div class="line"></div>
+          <div class="blob-container"></div>
+          <div class="line"></div>
+        </button>
+      </form>
+
+      <nav class="navigation wheel">
+        <div class="wheel-item">
+          <a href="#intro">Welcome</a>
+          <div class="anchor"></div>
+        </div>
+        <div class="wheel-item">
+          <a href="#about-me">About Me</a>
+          <div class="anchor"></div>
+        </div>
+        <div class="wheel-item">
+          <a href="#projects">Projects</a>
+          <div class="anchor"></div>
+        </div>
+        <div class="wheel-item">
+          <a href="#contacts">Contacts</a>
+          <div class="anchor"></div>
+        </div>
+        <!-- <ul>
+          <li>
+            <a href="#about-me">About Me</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="#contacts">Contacts</a>
+          </li> -->
+        </ul>
+      </nav>
+
+      <div class="blob"></div>
+    </dialog>
+
     <main>
       <div class="rotater">
         <div class="circle-wrapper">
@@ -48,7 +91,12 @@
         </div>
       </div>
 
-      <section class="intro">
+      <button id="navButton" class="navigation-button">
+        <div class="line"></div>
+        <div class="line"></div>
+      </button>
+
+      <section class="intro" id="intro">
         <div class="bg-text">トゥン　リン　ピョー</div>
         <div class="name">
           <h1>
@@ -164,9 +212,57 @@
         </div>
       </section>
 
-      <section class="about-me"></section>
+      <section class="about-me" id="about-me">
+        <h2>About Me</h2>
+      </section>
 
-      <section class="work-history"></section>
+      <section class="work-history">
+        <h2>Projects</h2>
+        <ul class="project-list" id="projects">
+          <li>
+            <span data-for="yomiuri">Yomiuri Shimbun</span>
+          </li>
+          <li>
+            <span data-for="coremobile">Core Mobile</span>
+          </li>
+          <li>
+            <span data-for="united-arrow">United Arrow</span>
+          </li>
+          <li>
+            <span data-for="inhouse">Inhouse Furniture</span>
+          </li>
+          <li>
+            <span data-for="ec-cube">Ec-cube Plugins</span>
+          </li>
+          <li>
+            <span data-for="expenses">Expenses</span>
+          </li>
+        </ul>
+        <div class="project-container">
+          <div class="project" data-project="yomiuri">
+            <img src="./public/svgs/yomiuri-sb.svg" alt="Yomiuri Shimbun">
+          </div>
+          <div class="project" data-project="coremobile">
+            <img src="./public/svgs/coremobile.svg" alt="Core Mobile">
+          </div>
+          <div class="project" data-project="united-arrow">
+            <img src="./public/svgs/ua.svg" alt="United Arrow">
+          </div>
+          <div class="project" data-project="inhouse">
+            <img src="./public/svgs/inhouse.svg" alt="Inhouse">
+          </div>
+          <div class="project" data-project="ec-cube">
+            <img src="./public/svgs/plugin.svg" alt="Ec-cube Plugins">
+          </div>
+          <div class="project" data-project="expenses">
+            <img src="./public/svgs/expense.svg" alt="Expenses">
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contacts">
+        <h2>Contacts</h2>
+      </section>
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
