@@ -1,7 +1,2 @@
-import { Navigation } from './scripts/navigation'
-import './style.css'
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  new Navigation("navButton", "navMenu")
-})
+import './polyfills/dialog'
+import './styles/style.css'

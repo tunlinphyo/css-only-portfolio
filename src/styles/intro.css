@@ -20,7 +20,7 @@
 
   /* border-bottom: 1px solid light-dark(var(--stone-3), var(--stone-11)); */
   .name {
-    margin-block-start: 16vh;
+    margin-block-start: 15vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -56,10 +56,20 @@
 
         transition: color .5s var(--ease-1);
         color: var(--muted-text);
-        
-        &:hover,
+        /* text-box: trim-start cap alphabetic; */
+
+        /* &:hover, */
         &.reversed {
           color: var(--accent);
+
+          [data-effect="text-hover"] {
+            padding-inline-end: 0.5rem;
+            margin-inline-end: -0.5rem;
+          }
+        }
+
+        &:not(.reversed) {
+          --shadow-color: var(--accent);
         }
       }
 

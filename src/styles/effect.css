@@ -1,0 +1,36 @@
+[data-effect="text-hover"] {
+  --duration: .6s;
+  --shadow-color: currentColor;
+  --easing: var(--ease-spring-2);
+  display: inline-block;
+  overflow: clip;
+  line-height: 1;
+  text-box: trim-start alphabetic alphabetic;
+  /* outline: 1px solid hotpink; */
+
+  > * {
+    display: inline-block;
+    text-shadow: 0 1.3em 0 var(--shadow-color);
+    transition: translate var(--duration) var(--easing);
+    transition-delay: calc(sibling-index() * .03s);
+
+    &[data-shadow] {
+      position: relative;
+      text-shadow: none;
+
+      &::before {
+        content: attr(data-shadow);
+        position: absolute;
+        inset: 0;
+        translate: var(--x, 0) 1.3em;
+        color: var(--shadow-color);
+      }
+    }
+  }
+
+  &:hover {
+    > * {
+      translate: 0 -1.3em;
+    }
+  }
+}

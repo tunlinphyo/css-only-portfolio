@@ -3,13 +3,15 @@
 @import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" layer(utils);
 @import "https://unpkg.com/open-props" layer(utils);
 
-@import "./styles/navigation.css" layer(page);
-@import "./styles/rotater.css" layer(page);
-@import "./styles/intro.css" layer(page);
-@import "./styles/quick-contact.css" layer(page);
-@import "./styles/about-me.css" layer(page);
-@import "./styles/work-history.css" layer(page);
-@import "./styles/contacts.css" layer(page);
+@import "./effect.css" layer(component);
+
+@import "./navigation.css" layer(page);
+@import "./rotater.css" layer(page);
+@import "./intro.css" layer(page);
+@import "./quick-contact.css" layer(page);
+@import "./about-me.css" layer(page);
+@import "./work-history.css" layer(page);
+@import "./contacts.css" layer(page);
 
 :root {
   --top: light-dark(var(--stone-2), var(--stone-5));
@@ -102,7 +104,7 @@
       animation: auto linear titleReveal both;
       animation-timeline: view();
       animation-range: entry 100% cover 50%;
-      
+
       &:hover {
         background-size: 100% 100%;
       }

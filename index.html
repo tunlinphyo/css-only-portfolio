@@ -27,7 +27,7 @@
       </style>
     </svg>
 
-    <dialog id="navMenu" class="navigation-menu">
+    <dialog id="nav-menu" class="navigation-menu">
       <form method="dialog">
         <button id="closeNav" class="navigation-close">
           <div class="line"></div>
@@ -36,7 +36,7 @@
         </button>
       </form>
 
-      <nav class="navigation wheel">
+      <nav class="navigation wheel" dialogclose>
         <div class="wheel-item">
           <a href="#intro">Welcome</a>
           <div class="anchor"></div>
@@ -91,7 +91,7 @@
         </div>
       </div>
 
-      <button id="navButton" class="navigation-button">
+      <button class="navigation-button" dialogtarget="nav-menu">
         <div class="line"></div>
         <div class="line"></div>
       </button>
@@ -100,14 +100,20 @@
         <div class="bg-text">トゥン　リン　ピョー</div>
         <div class="name">
           <h1>
-            I'm <em>Tun</em>,<br/>
-            a <em class="reversed">Frontend Engineer</em><br />
-            based in <em>Tokyo</em>
+            I'm <em data-effect="text-hover">
+              <span>T</span><span>u</span><span>n</span>
+            </em>,<br/>
+            a <em class="reversed">
+              <span data-effect="text-hover">
+                <span data-shadow="S">F</span><span data-shadow="o" style="--x: 0.06em">r</span><span data-shadow="f" style="--x: 0.26em">o</span><span data-shadow="t">n</span><span data-shadow="w" style="--x: -0.25em">t</span><span data-shadow="a" style="--x: 0.2em">e</span><span data-shadow="r" style="--x: 0.25em">n</span><span data-shadow="e">d</span>
+              </span>
+              Engineer
+            </em><br />
+            based in <em data-effect="text-hover">
+              <span data-shadow="J">T</span><span data-shadow="a" style="--x: -0.05em">o</span><span data-shadow="p" style="--x: -0.05em">k</span><span data-shadow="a">y</span><span data-shadow="n">o</span>
+            </em>
           </h1>
         </div>
-        <!-- <h2>Accessibility Specialist</h2> -->
-        <!-- Senior Frontend Engineer -->
-        <!-- <p class="good-at">(TypeScript, Vue, Web Components, Firebase)</p> -->
         <p class="what-i-do">
           I build production web applications with a focus on UI architecture, performance, and reliable delivery.
           <!-- I've worked in Tokyo since 2021, leading frontend work for e-commerce and high-traffic systems. -->
@@ -213,7 +219,33 @@
       </section>
 
       <section class="about-me" id="about-me">
-        <h2>About Me</h2>
+        <div class="container">
+          <div class="section-start">
+            <h2>About Me</h2>
+            <p>
+              Senior Frontend Engineer with 7+ years of experience, specializing in TypeScript, modern Web APIs,
+              and scalable frontend architecture. Experienced in EC-CUBE 4 e-commerce, API integration, performance
+              optimization, and cross-functional, international collaboration.
+            </p>
+          </div>
+          <div class="section-end">
+            <!-- <h3>What I’m good at</h3> -->
+            <ul>
+              <li>
+                <p>Building maintainable UI systems and reusable components</p>
+              </li>
+              <li>
+                <p>Performance optimization and UI/UX responsiveness</p>
+              </li>
+              <li>
+                <p>Shipping production features under real constraints</p>
+              </li>
+              <li>
+                <p>Owning delivery: planning, communication, and stability</p>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section class="work-history">
