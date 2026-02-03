@@ -228,6 +228,7 @@
       &:has(a:hover) {
         .anchor {
           anchor-name: --navigation;
+          rotate: calc(var(--degree) * -1);
         }
       }
 
@@ -266,7 +267,8 @@
       }
 
       .anchor {
-        width: .45em;
+        width: .6em;
+        translate: 0 0.05em;
         aspect-ratio: 1;
         /* background-color: #f00; */
       }
@@ -284,6 +286,11 @@
 
     transition: all .7s var(--ease-spring-3);
     border-radius: 50%;
+
+    --top: light-dark(var(--cyan-4), var(--cyan-6));
+    --bottom: light-dark(var(--cyan-7), var(--cyan-11));
+    background-image: linear-gradient(var(--top), var(--bottom));
+    box-shadow: var(--shadow-1), inset 0 1px 2px light-dark(var(--cyan-1), var(--cyan-4));
   }
 }
 

@@ -29,7 +29,7 @@
       --line-width: 1px;
       --line-color: var(--muted-text);
       font-weight: 700;
-      font-size: clamp(2.8rem, 8vw, 10rem);
+      font-size: clamp(2.5rem, 7vw, 10rem);
 
       line-height: 1.2;
       @media (min-width: 992px) {
@@ -56,7 +56,6 @@
 
         transition: color .5s var(--ease-1);
         color: var(--muted-text);
-        /* text-box: trim-start cap alphabetic; */
 
         /* &:hover, */
         &.reversed {
@@ -117,7 +116,7 @@
       display: block;
       width: 2px;
       height: 19vh;
-      background-color: var(--muted-text);
+      background-color: var(--muted-text-2);
     }
   }
 
@@ -125,7 +124,7 @@
     writing-mode: vertical-rl;
     text-orientation: mixed;
     white-space: nowrap;
-    color: var(--muted-text);
+    color: var(--muted-text-2);
     letter-spacing: 4px;
     font-weight: 600;
     line-height: 1;

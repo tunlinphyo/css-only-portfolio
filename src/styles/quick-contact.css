@@ -18,19 +18,20 @@
         left: anchor(left);
         bottom: anchor(bottom);
         right: anchor(right);
-        background-color: var(--muted-text);
-        border: 3px double light-dark(var(--stone-2), var(--stone-10));
+        /* background-color: var(--muted-text-2);
+        border: 2px solid var(--surface-2); */
+        /* border: 2px solid light-dark(var(--stone-2), var(--stone-10)); */
 
-        /* --top: light-dark(var(--stone-2), var(--stone-7));
-        --bottom: light-dark(var(--stone-7), var(--stone-7));
+        --top: light-dark(var(--stone-4), var(--stone-7));
+        --bottom: light-dark(var(--stone-7), var(--stone-10));
         background-image: linear-gradient(var(--top), var(--bottom));
-        box-shadow: inset 0 1px 1px var(--stone-0); */
+        box-shadow: var(--shadow-2), inset 0 1px 1px light-dark(var(--stone-3), var(--stone-6));
 
         transition: all .7s var(--ease-spring-3);
-        border-radius: 12px;
 
+        border-radius: 12px;
         @supports(corner-shape: squircle) {
-          border-radius: 120px;
+          border-radius: 60px;
           corner-shape: squircle;
         }
       }
@@ -60,7 +61,7 @@
           align-items: center;
           color: light-dark(var(--stone-0), var(--stone-11));
           padding: var(--size-2) var(--size-3);
-          
+
           border-radius: 12px;
           @supports(corner-shape: squircle) {
             border-radius: 120px;

@@ -221,24 +221,41 @@
       <section class="about-me" id="about-me">
         <div class="container">
           <div class="section-start">
-            <h2>About Me</h2>
+            <h2>
+              About Me
+              <!-- <span data-effect="text-hover">
+                <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span>
+                <span>M</span><span>e</span>
+              </span> -->
+            </h2>
             <p>
-              Senior Frontend Engineer with 7+ years of experience, specializing in TypeScript, modern Web APIs,
-              and scalable frontend architecture. Experienced in EC-CUBE 4 e-commerce, API integration, performance
-              optimization, and cross-functional, international collaboration.
+              Senior Frontend Engineer with 7+ years of experience, specializing in CSS,
+              modern Web APIs, and scalable frontend architecture.
             </p>
+            <!-- <p>
+              Experienced in EC-CUBE 4 e-commerce, API integration, performance
+              optimization, and cross-functional, international collaboration.
+            </p> -->
           </div>
           <div class="section-end">
-            <!-- <h3>What I’m good at</h3> -->
+            <h3>
+              <!-- What I'm good at -->
+              <span data-effect="text-hover">
+                <span>W</span><span>h</span><span>a</span><span>t</span>
+                <span>I</span><span>'</span><span>m</span>
+                <span>g</span><span>o</span><span>o</span><span>d</span>
+                <span>a</span><span>t</span>
+              </span>
+            </h3>
             <ul>
               <li>
                 <p>Building maintainable UI systems and reusable components</p>
               </li>
               <li>
-                <p>Performance optimization and UI/UX responsiveness</p>
+                <p>Performance optimization (runtime, rendering, and UX responsiveness)</p>
               </li>
               <li>
-                <p>Shipping production features under real constraints</p>
+                <p>Shipping production features under real constraints (time, scope, traffic)</p>
               </li>
               <li>
                 <p>Owning delivery: planning, communication, and stability</p>
@@ -249,45 +266,75 @@
       </section>
 
       <section class="work-history">
-        <h2>Projects</h2>
-        <ul class="project-list" id="projects">
-          <li>
-            <span data-for="yomiuri">Yomiuri Shimbun</span>
-          </li>
-          <li>
-            <span data-for="coremobile">Core Mobile</span>
-          </li>
-          <li>
-            <span data-for="united-arrow">United Arrow</span>
-          </li>
-          <li>
-            <span data-for="inhouse">Inhouse Furniture</span>
-          </li>
-          <li>
-            <span data-for="ec-cube">Ec-cube Plugins</span>
-          </li>
-          <li>
-            <span data-for="expenses">Expenses</span>
-          </li>
-        </ul>
-        <div class="project-container">
-          <div class="project" data-project="yomiuri">
-            <img src="./public/svgs/yomiuri-sb.svg" alt="Yomiuri Shimbun">
+        <h2>Recent Works</h2>
+        <div class="projects" id="projects">
+          <div class="project-list">
+            <ul>
+              <li>
+                <span data-for="yomiuri">
+                  Yomiuri Shimbun
+                  <!-- <span>Y</span><span>o</span><span>m</span><span>i</span><span>u</span><span>r</span><span>i</span>
+                  <span>S</span><span>h</span><span>i</span><span>m</span><span>b</span><span>u</span><span>n</span> -->
+                </span>
+              </li>
+              <li>
+                <span data-for="coremobile">
+                  Core Mobile
+                  <!-- <span>C</span><span>o</span><span>r</span><span>e</span>
+                  <span>M</span><span>o</span><span>b</span><span>i</span><span>l</span><span>e</span> -->
+                </span>
+              </li>
+              <li>
+                <span data-for="united-arrow">
+                  United Arrow
+                  <!-- <span>U</span><span>n</span><span>i</span><span>t</span><span>e</span><span>d</span>
+                  <span>A</span><span>r</span><span>r</span><span>o</span><span>w</span> -->
+                </span>
+              </li>
+              <li>
+                <span data-for="inhouse">
+                  Inhouse Furniture
+                  <!-- <span>I</span><span>n</span><span>h</span><span>o</span><span>u</span><span>s</span><span>e</span>
+                  <span>F</span><span>u</span><span>r</span><span>n</span><span>i</span><span>t</span><span>u</span><span>r</span><span>e</span> -->
+                </span>
+              </li>
+              <li>
+                <span data-for="ec-cube">
+                  Ec-cube Plugins
+                  <!-- <span>E</span><span>c</span><span>-</span><span>c</span><span>u</span><span>b</span><span>e</span>
+                  <span>P</span><span>l</span><span>u</span><span>g</span><span>i</span><span>n</span><span>s</span> -->
+                </span>
+              </li>
+              <li>
+                <span data-for="expenses">
+                  Expenses
+                  <!-- <span>E</span><span>x</span><span>p</span><span>e</span><span>n</span><span>s</span><span>e</span><span>s</span> -->
+                </span>
+              </li>
+            </ul>
           </div>
-          <div class="project" data-project="coremobile">
-            <img src="./public/svgs/coremobile.svg" alt="Core Mobile">
-          </div>
-          <div class="project" data-project="united-arrow">
-            <img src="./public/svgs/ua.svg" alt="United Arrow">
-          </div>
-          <div class="project" data-project="inhouse">
-            <img src="./public/svgs/inhouse.svg" alt="Inhouse">
-          </div>
-          <div class="project" data-project="ec-cube">
-            <img src="./public/svgs/plugin.svg" alt="Ec-cube Plugins">
-          </div>
-          <div class="project" data-project="expenses">
-            <img src="./public/svgs/expense.svg" alt="Expenses">
+          <div class="project-container">
+            <div class="project" data-project="intro">
+              This is intro here...
+            </div>
+            <div class="project" data-project="yomiuri">
+              <img src="./public/svgs/yomiuri-sb.svg" alt="Yomiuri Shimbun">
+            </div>
+            <div class="project" data-project="coremobile">
+              <img src="./public/svgs/coremobile.svg" alt="Core Mobile">
+            </div>
+            <div class="project" data-project="united-arrow">
+              <img src="./public/svgs/ua.svg" alt="United Arrow">
+            </div>
+            <div class="project" data-project="inhouse">
+              <img src="./public/svgs/inhouse.svg" alt="Inhouse">
+            </div>
+            <div class="project" data-project="ec-cube">
+              <img src="./public/svgs/plugin.svg" alt="Ec-cube Plugins">
+            </div>
+            <div class="project" data-project="expenses">
+              <img src="./public/svgs/expense.svg" alt="Expenses">
+            </div>
           </div>
         </div>
       </section>
