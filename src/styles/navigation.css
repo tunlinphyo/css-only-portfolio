@@ -48,15 +48,16 @@
   .line {
     position: absolute;
     width: var(--size-7);
-    height: 2px;
+    height: 3px;
+    border-radius: 2px;
     background-color: var(--muted-text);
     transition: translate .7s var(--ease-spring-3);
 
     &:first-child {
-      translate: 0 -2px;
+      translate: 0 -3px;
     }
     &:last-child {
-      translate: 0 2px;
+      translate: 0 3px;
     }
   }
 }
@@ -193,7 +194,8 @@
     .line {
       position: absolute;
       width: var(--size-6);
-      height: 2px;
+      height: 3px;
+      border-radius: 2px;
       background-color: var(--bg);
       transform: rotate(0deg);
       transition: transform 1s var(--ease-spring-3);
@@ -288,9 +290,9 @@
     border-radius: 50%;
 
     --top: light-dark(var(--cyan-4), var(--cyan-6));
-    --bottom: light-dark(var(--cyan-7), var(--cyan-11));
+    --bottom: light-dark(var(--cyan-7), var(--cyan-9));
     background-image: linear-gradient(var(--top), var(--bottom));
-    box-shadow: var(--shadow-1), inset 0 1px 2px light-dark(var(--cyan-1), var(--cyan-4));
+    box-shadow: var(--shadow-2), inset 0 2px 2px light-dark(var(--cyan-2), var(--cyan-4));
   }
 }
 
