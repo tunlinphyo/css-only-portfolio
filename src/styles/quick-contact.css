@@ -21,11 +21,17 @@
         /* background-color: var(--muted-text-2);
         border: 2px solid var(--surface-2); */
         /* border: 2px solid light-dark(var(--stone-2), var(--stone-10)); */
-
+/*
         --top: light-dark(var(--stone-5), var(--stone-7));
         --bottom: light-dark(var(--stone-8), var(--stone-10));
         background-image: linear-gradient(var(--top), var(--bottom));
         box-shadow: var(--shadow-2), inset 0 1px 1px light-dark(var(--stone-4), var(--stone-6));
+
+        --top: light-dark(var(--cyan-3), var(--cyan-7));
+        --bottom: light-dark(var(--cyan-7), var(--cyan-10));
+        background-image: linear-gradient(var(--top), var(--bottom)); */
+        background-color: var(--accent);
+        box-shadow: 0 1px 1px light-dark(var(--cyan-8), var(--cyan-10)), inset 0 1px 1px light-dark(var(--cyan-3), var(--cyan-6));
 
         transition: all .7s var(--ease-spring-3);
 

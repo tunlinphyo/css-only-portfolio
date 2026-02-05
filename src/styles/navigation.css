@@ -37,10 +37,10 @@
   &:hover {
     .line {
       &:first-child {
-        translate: 0 -5px;
+        translate: 0 -6px;
       }
       &:last-child {
-        translate: 0 5px;
+        translate: 0 6px;
       }
     }
   }
@@ -48,8 +48,7 @@
   .line {
     position: absolute;
     width: var(--size-7);
-    height: 3px;
-    border-radius: 2px;
+    height: 2px;
     background-color: var(--muted-text);
     transition: translate .7s var(--ease-spring-3);
 
@@ -88,40 +87,11 @@
 
     .wheel .wheel-item {
       opacity: 1;
-      /* --offset: calc((var(--count) - 1) / 2);
-      --degree: calc((var(--i) - var(--offset)) * var(--step)); */
-
-      &:nth-of-type(1) {
-        --degree: 21deg;
-      }
-      &:nth-of-type(2) {
-        --degree: 7deg;
-      }
-      &:nth-of-type(3) {
-        --degree: -7deg;
-      }
-      &:nth-of-type(4) {
-        --degree: -21deg;
-      }
+      --degree: calc(((var(--index) - 1) - var(--offset)) * var(--step) * -1);
 
       @starting-style {
         transform: translate(min(30vw, 30vh), 0) rotate(0deg);
         opacity: 0;
-      }
-
-      @media (max-width: 400px) {
-        &:nth-of-type(1) {
-          --degree: 24deg;
-        }
-        &:nth-of-type(2) {
-          --degree: 8deg;
-        }
-        &:nth-of-type(3) {
-          --degree: -8deg;
-        }
-        &:nth-of-type(4) {
-          --degree: -24deg;
-        }
       }
     }
 
@@ -194,8 +164,7 @@
     .line {
       position: absolute;
       width: var(--size-6);
-      height: 3px;
-      border-radius: 2px;
+      height: 2px;
       background-color: var(--bg);
       transform: rotate(0deg);
       transition: transform 1s var(--ease-spring-3);
@@ -203,8 +172,9 @@
   }
 
   .wheel {
-    /* --count: 4;
-    --step: 16deg; */
+    --step: 14deg;
+    --offset: calc((var(--count) - 1) / 2);
+    --degree: 0deg;
 
     width: 100%;
     height: 100%;
@@ -212,8 +182,11 @@
     justify-content: flex-end;
     align-items: center;
 
+    @media (max-width: 400px) {
+      --step: 16deg;
+    }
+
     .wheel-item {
-      --degree: 0deg;
       position: absolute;
       z-index: 2;
       right: 0;
@@ -230,7 +203,6 @@
       &:has(a:hover) {
         .anchor {
           anchor-name: --navigation;
-          rotate: calc(var(--degree) * -1);
         }
       }
 
@@ -260,6 +232,7 @@
           transform: translate(-1vw, 0) scale(1.2);
           --stroke-color: var(--accent);
           --fill-color: var(--accent);
+          text-shadow: 0 1px 1px light-dark(var(--cyan-10), var(--cyan-11)), 0 -1px 1px light-dark(var(--cyan-2), var(--cyan-4));
           /* text-shadow: var(--xy) var(--xy) var(--accent); */
         }
 
@@ -271,7 +244,9 @@
       .anchor {
         width: .6em;
         translate: 0 0.05em;
+        display: inline-block;
         aspect-ratio: 1;
+        rotate: calc(var(--degree) * -1);
         /* background-color: #f00; */
       }
     }
@@ -289,10 +264,13 @@
     transition: all .7s var(--ease-spring-3);
     border-radius: 50%;
 
-    --top: light-dark(var(--cyan-4), var(--cyan-6));
+    background-color: var(--accent);
+    box-shadow: 0 1px 1px light-dark(var(--cyan-8), var(--cyan-11)), inset 0 1px 1px light-dark(var(--cyan-3), var(--cyan-6));
+
+    /* --top: light-dark(var(--cyan-4), var(--cyan-6));
     --bottom: light-dark(var(--cyan-7), var(--cyan-9));
     background-image: linear-gradient(var(--top), var(--bottom));
-    box-shadow: var(--shadow-2), inset 0 2px 2px light-dark(var(--cyan-2), var(--cyan-4));
+    box-shadow: var(--shadow-2), inset 0 2px 2px light-dark(var(--cyan-2), var(--cyan-4)); */
   }
 }
 

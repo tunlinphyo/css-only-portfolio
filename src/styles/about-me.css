@@ -1,8 +1,7 @@
 .about-me {
   overflow: clip;
-  padding: 12vh clamp(1rem, 5vw, 10rem);
+  padding-block: clamp(1rem, 5vw, 10rem);
   margin-block-start: 6vh;
-  /* height: 100vh; */
   background-color: light-dark(var(--stone-3), var(--stone-9));
 
   .container {
@@ -32,7 +31,7 @@
 
         animation: auto linear aboutTitleReveal both;
         animation-timeline: view();
-        animation-range: entry 0% cover 20%;
+        animation-range: entry 0% cover 25%;
       }
       p {
         margin-block: 1rem;
@@ -47,6 +46,7 @@
     .section-end {
       grid-column: 1 / 7;
       grid-row: 3 / 6;
+      justify-content: flex-end;
 
       @media (min-width: 992px) {
         grid-column: 2 / 7;
@@ -66,13 +66,14 @@
       }
 
       & ul {
+        max-width: 900px;
         display: grid;
         gap: 3vh;
         margin: 0;
         padding: 0;
         list-style: none;
         padding-block-start: var(--size-3);
-        
+
         @media (min-width: 768px) {
           grid-template-columns: 1fr 1fr;
         }
@@ -83,7 +84,6 @@
           /* aspect-ratio: 3 / 2; */
           justify-content: flex-start;
           align-items: center;
-          background-color: light-dark(var(--stone-2), var(--stone-10));
           /* color: var(--muted-text); */
           padding: var(--size-6);
 
@@ -93,10 +93,13 @@
             corner-shape: squircle;
           } */
 
-          --top: light-dark(var(--stone-1), var(--stone-8));
+          /* --top: light-dark(var(--stone-1), var(--stone-8));
           --bottom: light-dark(var(--stone-4), var(--stone-10));
-          background-image: linear-gradient(var(--top), var(--bottom));
-          box-shadow: var(--shadow-1), inset 0 1px 2px light-dark(white, var(--stone-7));
+          background-image: linear-gradient(to top, var(--top), var(--bottom));
+          box-shadow: var(--shadow-1), inset 0 1px 1px light-dark(white, var(--stone-7)); */
+
+          background-color: light-dark(var(--stone-2), var(--stone-10));
+          box-shadow: 0 1px 1px light-dark(var(--stone-4), var(--stone-11)), inset 0 1px 1px light-dark(var(--stone-0), var(--stone-7));
 
           border-radius: 25px;
           @supports(corner-shape: squircle) {
@@ -114,6 +117,7 @@
 
           p {
             &::first-letter {
+              -webkit-initial-letter: 2;
               initial-letter: 2;
               color: var(--accent);
               font-weight: 700;
@@ -147,10 +151,10 @@
 @keyframes cardReveal {
   from {
     /* scale: .5; */
-    translate: 25vw 0;
+    translate: 30vw 0;
   }
   to {
     /* scale: 1; */
-    translate: -25vw 0;
+    translate: -30vw 0;
   }
 }

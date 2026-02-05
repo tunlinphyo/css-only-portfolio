@@ -18,49 +18,50 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  padding: var(--padding);
-  font-size: clamp(1rem, 2vw, 1.5rem);
 
-  box-shadow: var(--shadow-2), inset 0 1px 1px light-dark(white, var(--stone-7));
-  background-image: linear-gradient(var(--top), var(--bottom));
-  -webkit-mask:
-    radial-gradient(circle at center, transparent 33%, black 0);
-  mask:
-    radial-gradient(circle at center, transparent 33%, black 0);
+  box-shadow: 0 1px 2px light-dark(var(--stone-5), var(--stone-11));
 
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    inset: 26%;
-    aspect-ratio: 1;
+  .wrapper {
     border-radius: 50%;
-    box-shadow: inset 0 -1px 1px light-dark(var(--stone-2), var(--stone-9));
-    /* background-color: hotpink; */
-  }
+    padding: var(--padding);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    background-color: light-dark(var(--stone-2), var(--stone-9));
+    box-shadow: inset 0 1px 1px light-dark(white, var(--stone-7));
+    -webkit-mask:
+      radial-gradient(circle at center, transparent 0 33%, black 33% 100%);
+    mask:
+      radial-gradient(circle at center, transparent 0 33%, black 33% 100%);
 
-  /* box-shadow: inset 0 0 0 var(--size) var(--surface-1), inset 0 2px 4px calc(var(--size) - 0.1em) light-dark(var(--stone-4), var(--stone-12)), var(--shadow-1); */
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      inset: 26%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      box-shadow: inset 0 1px 1px light-dark(var(--stone-4), var(--stone-11)), inset 0 -1px 1px light-dark(white, var(--stone-7));
+    }
+    .circle-wrapper {
+      animation: rotateAnimation 1ms linear;
+      animation-timeline: --square-timeline;
 
-  .circle-wrapper {
-    animation: rotateAnimation 1ms linear;
-    animation-timeline: --square-timeline;
+      width: 100%;
+      aspect-ratio: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-    width: 100%;
-    aspect-ratio: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .circle-text {
+      width: 100%;
+      height: 100%;
+    }
 
-  .circle-text {
-    width: 100%;
-    height: 100%;
-  }
-
-  .circle-text text {
-    font-size: 36px;
-    font-family: var(--font-custom);
-    letter-spacing: 10px;
-    fill: var(--muted-text);
+    .circle-text text {
+      font-size: 36px;
+      font-family: var(--font-custom);
+      letter-spacing: 10px;
+      fill: var(--muted-text);
+    }
   }
 }
