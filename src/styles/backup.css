@@ -12,40 +12,38 @@
     --line-width: 2px;
   }
 
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: var(--size-3);
+  h2 {
+    --stroke-color: var(--muted-text);
+    text-box: trim-both cap alphabetic;
+    font-size: clamp(2.5rem, 7vw, 10rem);
+    /* font-size: clamp(2.5rem, 10vw, 12rem); */
 
-  .title {
-    h2 {
-      width: min-content;
-      font-size: clamp(2.5rem, 7vw, 10rem);
-      color: var(--muted-text);
-      line-height: 1;
-      /* text-box: trim-start cap alphabetic; */
-    }
+    position: sticky;
+    z-index: 1;
+    top: 40vh;
 
-    p {
-      max-width: 400px;
-      margin-block-start: var(--size-3);
-    }
+    color: var(--stroke-color);
+    /* @supports(-webkit-text-stroke: 1px #fff) {
+      -webkit-text-stroke: var(--line-width) var(--stroke-color);
+      color: var(--fill-color);
+    } */
   }
 
   .projects {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 1fr;
     scroll-padding-block-start: 10vh;
 
     .project-list {
-      grid-column: 1 / 5;
+      grid-column: 1 / 9;
       grid-row: 1 / 2;
       position: relative;
       z-index: 2;
 
       display: grid;
       place-items: stretch;
-      align-items: flex-start;
+      align-items: center;
       pointer-events: none;
 
       & ul {
@@ -78,9 +76,9 @@
             padding: var(--size-4) var(--padding);
             gap: var(--size-3);
 
-            /* animation: auto linear itemReveal both;
+            animation: auto linear itemReveal both;
             animation-timeline: view();
-            animation-range: entry 0% cover 30%; */
+            animation-range: entry 0% cover 30%;
 
             /* &:hover {
               color: var(--accent);
@@ -94,7 +92,7 @@
               right: var(--padding);
               bottom: 0;
               height: 1px;
-              background-color: light-dark(var(--stone-3), var(--stone-10));
+              background-color: var(--surface-dark);
               transition: opacity .6s var(--ease-3);
             }
 
@@ -109,7 +107,7 @@
     }
 
     .project-container {
-      grid-column: 2 / 5;
+      grid-column: 3 / 8;
       grid-row: 1 / 2;
 
       position: relative;
@@ -128,27 +126,19 @@
         height: 100%;
         padding: var(--padding);
 
-        --bg: light-dark(var(--stone-1), var(--stone-11));
-        background-color: color-mix(in srgb, var(--bg), transparent 5%);
-        box-shadow: 0 2px 2px light-dark(var(--stone-4), var(--stone-12)), inset 0 1px 1px light-dark(white, var(--stone-9));
+        --bg: light-dark(var(--stone-1), var(--stone-10));
+        background-color: color-mix(in srgb, var(--bg), transparent 3%);
+        box-shadow: 0 2px 2px light-dark(var(--stone-4), var(--stone-11)), inset 0 1px 1px light-dark(white, var(--stone-8));
 
-        /* border-radius: 40px;
+
+        border-radius: 40px;
         @supports(corner-shape: squircle) {
           border-radius: 80px;
-          corner-shape: squircle;
-        } */
-
-        transform-origin: top right;
-
-        border-radius: 5px;
-        @supports(corner-shape: squircle) {
-          border-radius: 10px;
           corner-shape: squircle;
         }
 
         &[open] {
           display: grid;
-          animation: projectReveal .7s var(--ease-spring-3);
         }
 
         &[default] {
@@ -227,12 +217,12 @@
 
       /* background-color: color-mix(in srgb, var(--surface-1), transparent 20%); */
 
-      background-color: light-dark(var(--stone-1), var(--stone-11));
-      box-shadow: 0 1px 1px light-dark(var(--stone-4), var(--stone-12)), inset 0 1px 1px light-dark(var(--stone-0), var(--stone-9));
+      background-color: light-dark(var(--stone-1), var(--stone-10));
+      box-shadow: 0 1px 1px light-dark(var(--stone-4), var(--stone-11)), inset 0 1px 1px light-dark(var(--stone-0), var(--stone-8));
 
-      border-radius: 5px;
+      border-radius: 12px;
       @supports(corner-shape: squircle) {
-        border-radius: 10px;
+        border-radius: 30px;
         corner-shape: squircle;
       }
     }
@@ -241,12 +231,10 @@
 
 @keyframes projectReveal {
   from {
-    scale: .5;
-    opacity: 0;
+    translate: 0 25vh;
   }
   to {
-    scale: 1;
-    opacity: 1;
+    translate: 0 0;
   }
 }
 

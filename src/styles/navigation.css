@@ -20,13 +20,13 @@
     corner-shape: squircle;
   }
 
-  &::before {
+  /* &::before {
     content: 'menu';
     position: absolute;
     left: calc(var(--size-7) * -1);
     translate: -0.8rem -1px;
     color: var(--muted-text);
-  }
+  } */
 
   &:focus-visible {
     anchor-name: --contact-heilight;

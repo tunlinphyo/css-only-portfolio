@@ -7,26 +7,6 @@
     <title>Tun Lin Phyo | Portfolio</title>
   </head>
   <body>
-    <svg class="not-in-view">
-      <defs>
-        <linearGradient id="Gradient1" x1="0" x2="0" y1="0" y2="1">
-          <stop class="stop1" offset="0%" />
-          <stop class="stop2" offset="100%" />
-        </linearGradient>
-      </defs>
-      <style>
-        #rect1 {
-          fill: url("#Gradient1");
-        }
-        .stop1 {
-          stop-color: light-dark(var(--stone-0), var(--stone-10));
-        }
-        .stop2 {
-          stop-color: light-dark(var(--stone-4), var(--stone-12));
-        }
-      </style>
-    </svg>
-
     <dialog id="nav-menu" class="navigation-menu">
       <form method="dialog">
         <button id="closeNav" class="navigation-close">
@@ -97,15 +77,18 @@
         <div class="name">
           <h1>
             I'm <em data-effect="text-hover">
+              <!-- Tun -->
               <span>T</span><span>u</span><span>n</span>
             </em>,<br/>
             a <em class="reversed">
               <span data-effect="text-hover">
+                <!-- Frontend / Software -->
                 <span data-shadow="S">F</span><span data-shadow="o" style="--x: 0.06em">r</span><span data-shadow="f" style="--x: 0.26em">o</span><span data-shadow="t">n</span><span data-shadow="w" style="--x: -0.25em">t</span><span data-shadow="a" style="--x: 0.2em">e</span><span data-shadow="r" style="--x: 0.25em">n</span><span data-shadow="e">d</span>
               </span>
               Engineer
             </em><br />
             based in <em data-effect="text-hover">
+              <!-- Tokyo / Japan -->
               <span data-shadow="J">T</span><span data-shadow="a" style="--x: -0.05em">o</span><span data-shadow="p" style="--x: -0.05em">k</span><span data-shadow="a">y</span><span data-shadow="n">o</span>
             </em>
           </h1>
@@ -219,19 +202,11 @@
           <div class="section-start">
             <h2>
               About Me
-              <!-- <span data-effect="text-hover">
-                <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span>
-                <span>M</span><span>e</span>
-              </span> -->
             </h2>
             <p>
               Senior Frontend Engineer with 7+ years of experience, specializing in CSS,
               modern Web APIs, and scalable frontend architecture.
             </p>
-            <!-- <p>
-              Experienced in EC-CUBE 4 e-commerce, API integration, performance
-              optimization, and cross-functional, international collaboration.
-            </p> -->
           </div>
           <div class="section-end">
             <h3>
@@ -262,13 +237,23 @@
       </section>
 
       <section class="work-history" id="projects">
-        <h2>
-          Recent Works
-          <span class="underline"></span>
-        </h2>
+        <div class="title">
+          <h2>
+            Recent Works
+            <span class="underline"></span>
+          </h2>
+          <p>
+            I’ve worked in Tokyo since 2021, leading frontend work for e-commerce and high-traffic systems.
+          </p>
+        </div>
         <hover-group class="projects">
           <div class="project-list">
             <ul>
+              <li>
+                <hover-item hovertarget="cuuvel">
+                  Cuuvel Dashboard
+                </hover-item>
+              </li>
               <li>
                 <hover-item hovertarget="yomiuri">
                   Yomiuri Shimbun
@@ -335,6 +320,12 @@
                 </div>
               </div>
             </hover-view> -->
+            <hover-view class="project" id="cuuvel">
+              <div class="display">
+                <div>PROJECT: Cuuvel Dashboard</div><br>
+                <div>TECHNOLOGY: Ec-cube 4, PHP, Symfony</div>
+              </div>
+            </hover-view>
             <hover-view class="project" id="yomiuri">
               <div class="display">
                 <div>PROJECT: Yomiuri Shimbun</div><br>

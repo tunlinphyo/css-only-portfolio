@@ -1,6 +1,7 @@
 .about-me {
   overflow: clip;
   padding-block: clamp(1rem, 5vw, 10rem);
+  padding-block-start: 12vh;
   margin-block-start: 6vh;
   background-color: light-dark(var(--stone-3), var(--stone-9));
 
@@ -31,7 +32,7 @@
 
         animation: auto linear aboutTitleReveal both;
         animation-timeline: view();
-        animation-range: entry 0% cover 25%;
+        animation-range: entry 5% cover 25%;
       }
       p {
         margin-block: 1rem;
@@ -99,11 +100,16 @@
           box-shadow: var(--shadow-1), inset 0 1px 1px light-dark(white, var(--stone-7)); */
 
           background-color: light-dark(var(--stone-2), var(--stone-10));
-          box-shadow: 0 1px 1px light-dark(var(--stone-4), var(--stone-11)), inset 0 1px 1px light-dark(var(--stone-0), var(--stone-7));
+          box-shadow: 0 1px 1px light-dark(var(--stone-4), var(--stone-11)), inset 0 1px 1px light-dark(var(--stone-0), var(--stone-8));
 
-          border-radius: 25px;
+          /* border-radius: 25px;
           @supports(corner-shape: squircle) {
             border-radius: 50px;
+            corner-shape: squircle;
+          } */
+          border-radius: 5px;
+          @supports(corner-shape: squircle) {
+            border-radius: 10px;
             corner-shape: squircle;
           }
 
@@ -133,9 +139,11 @@
 @keyframes aboutTitleReveal {
   from {
     translate: 0 20vh;
+    opacity: 0;
   }
   to {
     translate: 0 0;
+    opacity: 1;
   }
 }
 
