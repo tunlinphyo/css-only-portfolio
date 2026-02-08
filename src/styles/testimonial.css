@@ -1,0 +1,41 @@
+.testimonial {
+  .container {
+    padding-block: clamp(1rem, 5vw, 10rem);
+    overflow-x: auto;
+
+    .messages {
+
+      &::part(list) {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        gap: var(--carousel-gap, 1rem);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+
+        display: grid;
+        gap: var(--carousel-gap, 1rem);
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        height: 300px;
+      }
+
+      & li {
+        height: 300px;
+        list-style: none;
+        flex: 0 0 auto;
+        scroll-snap-align: center;
+
+        .message {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

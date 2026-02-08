@@ -2,9 +2,9 @@
   --duration: .5s;
   --shadow-color: currentColor;
   --easing: var(--ease-spring-1);
-  --y: 1.3em;
+  --y: 1em;
   display: inline-block;
-  overflow: clip;
+  overflow-y: clip;
   line-height: 1;
   /* text-box: trim-both alphabetic alphabetic; */
   /* text-box: trim-both text; */
@@ -34,5 +34,11 @@
     > * {
       translate: 0 calc(var(--y) * -1);
     }
+  }
+}
+
+[data-effect-parent]:hover {
+  [data-effect="text-hover"] > * {
+    translate: 0 calc(var(--y) * -1);
   }
 }

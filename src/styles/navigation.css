@@ -181,6 +181,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: relative;
 
     @media (max-width: 400px) {
       --step: 16deg;
@@ -233,7 +234,6 @@
           --stroke-color: var(--accent);
           --fill-color: var(--accent);
           text-shadow: 0 1px 1px light-dark(var(--cyan-10), var(--cyan-11)), 0 -1px 1px light-dark(var(--cyan-2), var(--cyan-4));
-          /* text-shadow: var(--xy) var(--xy) var(--accent); */
         }
 
         &:focus-within {
@@ -242,12 +242,12 @@
       }
 
       .anchor {
+        position: relative;
         width: .6em;
         translate: 0 0.05em;
         display: inline-block;
         aspect-ratio: 1;
         rotate: calc(var(--degree) * -1);
-        /* background-color: #f00; */
       }
     }
   }
@@ -255,6 +255,7 @@
   .blob {
     position-anchor: --navigation;
     position: absolute;
+    z-index: 3;
     top: anchor(top);
     left: anchor(left);
     bottom: anchor(bottom);
@@ -266,11 +267,6 @@
 
     background-color: var(--accent);
     box-shadow: 0 1px 1px light-dark(var(--cyan-8), var(--cyan-11)), inset 0 1px 1px light-dark(var(--cyan-3), var(--cyan-6));
-
-    /* --top: light-dark(var(--cyan-4), var(--cyan-6));
-    --bottom: light-dark(var(--cyan-7), var(--cyan-9));
-    background-image: linear-gradient(var(--top), var(--bottom));
-    box-shadow: var(--shadow-2), inset 0 2px 2px light-dark(var(--cyan-2), var(--cyan-4)); */
   }
 }
 
