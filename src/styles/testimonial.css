@@ -1,41 +1,81 @@
 .testimonial {
-  .container {
-    padding-block: clamp(1rem, 5vw, 10rem);
-    overflow-x: auto;
+  padding-block: 0;
+  min-height: 300vh;
+  view-timeline-name: --timeline_name;
+  view-timeline-axis: block;
 
-    .messages {
+  .t-group {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    height: 100vh;
+    padding-block-start: 12vh;
 
-      &::part(list) {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: flex;
-        gap: var(--carousel-gap, 1rem);
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
 
+    .t-content {
+      display: grid;
+      grid-template-rows: auto 1fr;
+
+      .message-container {
+        overflow: clip;
         display: grid;
-        gap: var(--carousel-gap, 1rem);
-        overflow-y: auto;
-        scroll-snap-type: y mandatory;
-        scroll-behavior: smooth;
-        height: 300px;
+        place-content: stretch;
+        position: relative;
+
+        view-timeline-name: --card_name;
+        view-timeline-axis: block;
+
+        outline: 1px solid hotpink;
       }
 
-      & li {
-        height: 300px;
-        list-style: none;
-        flex: 0 0 auto;
-        scroll-snap-align: center;
+      .t-messages {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
 
+        animation: auto linear messageReveal both;
+        animation-timeline: --timeline_name;
+        animation-range: entry 100% exit 0%;
         .message {
+          flex: 0 0 100%;
+          padding: var(--size-5);
           display: flex;
           justify-content: center;
           align-items: center;
-          text-align: center;
+
+
+          animation: auto linear cardReveal both;
+          /* animation-timeline: view(); */
+          animation-timeline: --card_name;
+          animation-range: entry 100% exit 100%;
         }
       }
     }
+
+    .t-footer {
+      background-color: #00f1;
+    }
+  }
+}
+
+@keyframes messageReveal {
+  form {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 -300%;
+  }
+}
+
+@keyframes cardReveal {
+  0%, 100% {
+    scale: .5;
+  }
+  50% {
+    scale: 1;
   }
 }

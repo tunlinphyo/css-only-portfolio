@@ -66,6 +66,10 @@ class HoverGroup extends HTMLElement {
       for (const view of allViews) view.removeAttribute('open')
     }
 
+    const clearActiveTriggers = () => {
+      for (const { trigger } of pairs) trigger.removeAttribute('active')
+    }
+
     const showDefaultIfIdle = () => {
       if (!defaultView) return
       for (const { view } of pairs) {
@@ -81,11 +85,13 @@ class HoverGroup extends HTMLElement {
         if (trigger.contains(target) || view.contains(target)) return
       }
       closeAll()
+      clearActiveTriggers()
       showDefaultIfIdle()
     }
 
     for (const { trigger, view } of pairs) {
       view.removeAttribute('open')
+      trigger.removeAttribute('active')
 
       const handleEnter = () => {
         if (defaultView && defaultView !== view) defaultView.removeAttribute('open')
@@ -99,6 +105,8 @@ class HoverGroup extends HTMLElement {
         event.preventDefault()
         event.stopPropagation()
         closeAll()
+        clearActiveTriggers()
+        trigger.setAttribute('active', '')
         view.setAttribute('open', '')
       }
 
