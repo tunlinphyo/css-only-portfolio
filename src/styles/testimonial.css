@@ -27,7 +27,25 @@
         view-timeline-name: --card_name;
         view-timeline-axis: block;
 
-        outline: 1px solid hotpink;
+        /* outline: 1px solid hotpink; */
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          z-index: 2;
+          left: 0;
+          right: 0;
+          height: 40%;
+        }
+        &::before {
+          top: 0;
+          background-image: linear-gradient(to bottom, var(--surface-1), var(--surface-1), transparent);
+        }
+        &::after {
+          bottom: 0;
+          background-image: linear-gradient(to top, var(--surface-1), var(--surface-1), transparent);
+        }
       }
 
       .t-messages {
@@ -48,10 +66,9 @@
           align-items: center;
 
 
-          animation: auto linear cardReveal both;
-          /* animation-timeline: view(); */
+          /* animation: auto linear cardReveal both;
           animation-timeline: --card_name;
-          animation-range: entry 100% exit 100%;
+          animation-range: entry 100% exit 100%; */
         }
       }
     }
@@ -68,14 +85,5 @@
   }
   to {
     translate: 0 -300%;
-  }
-}
-
-@keyframes cardReveal {
-  0%, 100% {
-    scale: .5;
-  }
-  50% {
-    scale: 1;
   }
 }
